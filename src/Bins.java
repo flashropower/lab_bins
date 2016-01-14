@@ -25,6 +25,17 @@ public class Bins {
         }
         return results;
     }
+    
+    /**
+     * Method to print all the information
+     * 
+     */
+    
+    public static void binSort(String heuristic){
+    	if (heuristic == "decreasing"){
+    		Collections.sort(data, Collections.reverseOrder());
+    	}
+    }
 
     /**
      * The main program.
@@ -79,7 +90,7 @@ public class Bins {
                 d2.add(size);
                 pq.add(d2);
             }
-        }
+     
 
         System.out.println();
         System.out.println("worst-fit decreasing method");
@@ -88,5 +99,6 @@ public class Bins {
             System.out.println(pq.poll());
         }
         System.out.println();
+    }
     }
 }
