@@ -72,13 +72,18 @@ public class Bins {
         Scanner input = new Scanner(Bins.class.getClassLoader().getResourceAsStream(DATA_FILE));
         List<Integer> data = b.readData(input);
         
-        int total = 0;
-        for (Integer size: data){
-        	total += size;
-        }
+        int total = calculateSize(data);
         System.out.println("total size = " + total / 1000000.0 + "GB");
         binSort(data, "worst fit");
         binSort(data, "decreasing");
 
     }
+
+	private static int calculateSize(List<Integer> data) {
+		int total = 0;
+        for (Integer size: data){
+        	total += size;
+        }
+		return total;
+	}
 }
